@@ -1,9 +1,14 @@
 # Hackathon1_2620030091
 1a)Data Types:
+
+
 import java.util.Scanner;
 
+
 public class HouseholdDetails {
+
     public static void main(String[] args) {
+    
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter number of family members: ");
