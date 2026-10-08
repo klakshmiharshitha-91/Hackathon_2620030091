@@ -1,1 +1,98 @@
+ Student Course Registration System:
 
+import java.util.Scanner;
+
+public class Student1 {
+
+    String name;
+    int rollNo;
+    double marks;
+    String course;
+
+    
+    Student1(String name, int rollNo, double marks, String course) {
+        this.name = name;
+        this.rollNo = rollNo;
+        this.marks = marks;
+        this.course = course;
+    }
+
+    
+    boolean checkEligibility() {
+        return marks >= 50;
+    }
+
+    
+    double calculateFee(int credits) {
+        return credits * 1500;
+    }
+
+    
+    double calculateFee(int credits, int discount) {
+        double fee = credits * 1500;
+        return fee - (fee * discount / 100);
+    }
+
+    
+    void displayDetails() {
+        System.out.println("\n--- Student Details ---");
+        System.out.println("Name    : " + name);
+        System.out.println("Roll No : " + rollNo);
+        System.out.println("Marks   : " + marks);
+        System.out.println("Course  : " + course);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter student name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter roll number: ");
+        int rollNo = sc.nextInt();
+
+        System.out.print("Enter marks: ");
+        double marks = sc.nextDouble();
+
+        sc.nextLine();
+
+        System.out.print("Enter course name: ");
+        String course = sc.nextLine();
+
+        System.out.print("Enter course credits: ");
+        int credits = sc.nextInt();
+
+        
+        Student1 s = new Student1(name, rollNo, marks, course);
+
+        s.displayDetails();
+
+        if (s.checkEligibility()) {
+
+            System.out.println("Status  : Eligible");
+
+            // Normal method
+            System.out.println("Course Fee: Rs. " + s.calculateFee(credits));
+
+            
+            if (marks >= 85) {
+                System.out.println("Final Fee after 20% scholarship: Rs. "
+                        + s.calculateFee(credits, 20));
+            }
+            else if (marks >= 70) {
+                System.out.println("Final Fee after 10% scholarship: Rs. "
+                        + s.calculateFee(credits, 10));
+            }
+            else {
+                System.out.println("Scholarship: No scholarship");
+            }
+
+        } else {
+            System.out.println("Status  : Not Eligible");
+            System.out.println("Student cannot register.");
+        }
+
+        sc.close();
+    }
+}
