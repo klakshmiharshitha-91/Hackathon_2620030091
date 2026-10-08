@@ -1,3 +1,5 @@
+Hackathon 1:
+
 1a) Data Types:
 
 
@@ -41,4 +43,23 @@ Enter evening water usage (in litres):
 Total Water Consumption:
 
 20 litres
+
+Hackathon 2:
+
+
+--- Student Details ---
+
+Name    : K.L.Harshitha
+
+Roll No : 91
+
+Marks   : 90.0
+
+Course  : JAVA
+
+Status  : Eligible
+
+Course Fee: Rs. 22500.0
+
+Final Fee after 20% scholarship: Rs. 18000.0
 
